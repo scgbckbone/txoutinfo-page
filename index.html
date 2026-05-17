@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>gettxoutsetinfo.com</title>
+    <meta
+      name="description"
+      content="A visual static page for Bitcoin Core's gettxoutsetinfo RPC and the UTXO set it measures."
+    >
+    <meta property="og:title" content="gettxoutsetinfo.com">
+    <meta
+      property="og:description"
+      content="A compact graphic tribute to Bitcoin Core's gettxoutsetinfo RPC."
+    >
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://gettxoutsetinfo.com/">
+    <meta name="theme-color" content="#0d141f">
+    <link rel="icon" href="favicon.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <main class="page-shell" aria-labelledby="page-title">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Bitcoin Core RPC</p>
+          <h1 id="page-title"><span>gettxout</span><span>setinfo</span></h1>
+          <p class="lede">
+            A snapshot of the spendable Bitcoin universe: every unspent output,
+            measured, hashed, and reported from a fully validated node.
+          </p>
+          <div class="command-line" aria-label="Example Bitcoin Core command">
+            <span class="prompt">$</span>
+            <code>bitcoin-cli gettxoutsetinfo</code>
+          </div>
+        </div>
+
+        <div class="visual" aria-label="Stylized UTXO set visualization">
+          <div class="node-core">
+            <span class="ring ring-one"></span>
+            <span class="ring ring-two"></span>
+            <span class="ring ring-three"></span>
+            <span class="coin-mark">₿</span>
+          </div>
+          <span class="orbit orbit-a"></span>
+          <span class="orbit orbit-b"></span>
+          <span class="orbit orbit-c"></span>
+          <div class="ledger-card card-a">
+            <span>height</span>
+            <strong>validated tip</strong>
+          </div>
+          <div class="ledger-card card-b">
+            <span>txouts</span>
+            <strong>unspent set</strong>
+          </div>
+          <div class="ledger-card card-c">
+            <span>hash_serialized_3</span>
+            <strong>deterministic digest</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats-strip" aria-label="RPC fields highlighted">
+        <article>
+          <span class="metric">blocks</span>
+          <strong>Chain height</strong>
+          <p>The block count used for the UTXO view.</p>
+        </article>
+        <article>
+          <span class="metric">txouts</span>
+          <strong>Spendable outputs</strong>
+          <p>The live set of coins that have not been spent.</p>
+        </article>
+        <article>
+          <span class="metric">total_amount</span>
+          <strong>BTC accounted</strong>
+          <p>The summed value represented by the set.</p>
+        </article>
+        <article>
+          <span class="metric">disk_size</span>
+          <strong>State footprint</strong>
+          <p>The storage used by chainstate data.</p>
+        </article>
+      </section>
+
+      <section class="terminal-panel" aria-label="Example output">
+        <div class="window-bar">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <pre><code>{
+  "height": 897321,
+  "bestblock": "00000000000000000000...",
+  "txouts": 181964732,
+  "bogosize": 14358291822,
+  "hash_serialized_3": "a deterministic commitment",
+  "disk_size": 12430718402,
+  "total_amount": 19874521.37500000
+}</code></pre>
+      </section>
+    </main>
+  </body>
+</html>
