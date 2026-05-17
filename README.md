@@ -3,6 +3,12 @@
 A static GitHub Pages site for `gettxoutsetinfo.com`, built around Bitcoin
 Core's `gettxoutsetinfo` RPC.
 
+Temporary GitHub Pages URL:
+
+```text
+https://scgbckbone.github.io/txoutinfo-page/
+```
+
 ## Local preview
 
 Open `index.html` directly in a browser, or serve the directory with any static
